@@ -58,13 +58,13 @@ public static class TabAdapter extends SlidingFragmentPagerAdapter {
   };
   ...
   @Override
-  public int getCount() {
-      return icons.length == titles.length ? icons.length : 0;
+  public CharSequence getPageTitle(int position) {
+    return titles[position];
   }
 
   @Override
-  public CharSequence getPageTitle(int position) {
-      return titles[position];
+  public Drawable getPageDrawable(int position) {
+    return context.getResources().getDrawable(icons[position]);
   }
   ...
 }
