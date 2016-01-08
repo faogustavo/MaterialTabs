@@ -3,8 +3,10 @@
 A simple way to implement Material Design Tabs.
 
 ## INSTALL
-
 Add this dependecy from jCenter:
+
+## SCREENSHOTS
+![](screenshots/tela_01.png) ![](screenshots/tela_02.png) ![](screenshots/tela_03.png)
 
 ``` groovy
 compile 'com.gustavofao:MaterialTabs:1.0'
