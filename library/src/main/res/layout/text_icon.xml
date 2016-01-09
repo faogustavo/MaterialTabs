@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/TabText"
         android:layout_below="@+id/TabImage"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -28,7 +28,5 @@
         android:maxLines="1"
         android:textAllCaps="true"
         android:textSize="14sp"/>
-
-
 
 </RelativeLayout>

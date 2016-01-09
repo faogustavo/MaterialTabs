@@ -48,6 +48,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     private static final int TEXT_ID = R.id.TabText;
     private static final int ICON_ID = R.id.TabImage;
+    private static final int INDICATOR_ID = R.id.TabIndicator;
 
     private int mTitleOffset;
 
@@ -82,57 +83,31 @@ public class SlidingTabLayout extends HorizontalScrollView {
         addView(mTabStrip, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
-    /**
-     * Sets a custom color for the item when it is not focused
-     */
     public void setCustomUnfocusedColor(int customUnfocusedColor) {
         this.customUnfocusedColor = customUnfocusedColor;
     }
 
-    /**
-     * Sets a custom color for the item when it is focused
-     */
     public void setCustomFocusedColor(int customFocusedColor) {
         this.customFocusedColor = customFocusedColor;
     }
 
-    /**
-     * Sets to all children objects ocuppates the same width.
-     */
     public void setDistributeEvenly(boolean distributeEvenly) {
         mDistributeEvenly = distributeEvenly;
     }
 
-    /**
-     * Sets the type of tab and its content.
-     */
     public void setTabType(TabType tabType) {
         this.tabType = tabType;
     }
 
-    /**
-     * Sets the colors to be used for indicating the selected tab. These colors are treated as a
-     * circular array. Providing one color will mean that all tabs are indicated with the same color.
-     */
     public void setSelectedIndicatorColors(int... colors) {
         mTabStrip.setSelectedIndicatorColors(colors);
     }
 
-    /**
-     * Set the {@link ViewPager.OnPageChangeListener}. When using {@link SlidingTabLayout} you are
-     * required to set any {@link ViewPager.OnPageChangeListener} through this method. This is so
-     * that the layout can update it's scroll position correctly.
-     *
-     * @see ViewPager#setOnPageChangeListener(ViewPager.OnPageChangeListener)
-     */
+
     public void setOnPageChangeListener(ViewPager.OnPageChangeListener listener) {
         mViewPagerPageChangeListener = listener;
     }
 
-    /**
-     * Sets the associated view pager. Note that the assumption here is that the pager content
-     * (number of tabs and tab titles) does not change after this call has been made.
-     */
     public void setViewPager(ViewPager viewPager) {
         mTabStrip.removeAllViews();
 
@@ -160,6 +135,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
             View tabView = null;
             TextView tabTitleView = null;
             ImageView tabImageView = null;
+            View tabIndicator = null;
 
             switch (tabType) {
                 case TEXT_ONLY:
@@ -170,6 +146,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 case ICON_ONLY:
                     tabView = LayoutInflater.from(getContext()).inflate(ICON_ONLY_TAB, mTabStrip, false);
                     tabImageView = (ImageView) tabView.findViewById(ICON_ID);
+                    tabIndicator = tabView.findViewById(INDICATOR_ID);
                     break;
 
                 case TEXT_ICON:
@@ -198,6 +175,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 tabImageView.setImageDrawable(adapter.getPageDrawable(i));
                 tabImageView.setColorFilter(i == mViewPager.getCurrentItem() ?
                         focused_color : unfocused_color, PorterDuff.Mode.MULTIPLY);
+            }
+
+            if (tabIndicator != null && adapter.hasIndicator(i)) {
+                tabIndicator.setVisibility(View.VISIBLE);
             }
 
             tabView.setOnClickListener(tabClickListener);

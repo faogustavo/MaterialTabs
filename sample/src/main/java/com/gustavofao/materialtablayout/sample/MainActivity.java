@@ -38,15 +38,15 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new TabAdapter(getSupportFragmentManager(), this)); // Necessario
 
         tabLayout.setDistributeEvenly(true);
-        tabLayout.setTabType(TabType.TEXT_ICON);
+        tabLayout.setTabType(TabType.ICON_ONLY);
         tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
-        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.colorAccent));
-        tabLayout.setCustomUnfocusedColor(getResources().getColor(R.color.colorAccent70));
+//        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.colorAccent));
+//        tabLayout.setCustomUnfocusedColor(getResources().getColor(R.color.colorAccent70));
 
         tabLayout.setViewPager(viewPager); // Necessário
     }
 
-    public class TabFragment extends Fragment {
+    public static class TabFragment extends Fragment {
 
         public static final String POSITION = "position";
 
@@ -118,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Drawable getPageDrawable(int position) {
             return context.getResources().getDrawable(icons[position]);
+        }
+
+        @Override
+        public boolean hasIndicator(int position) {
+            return position == 1;
         }
     }
 }

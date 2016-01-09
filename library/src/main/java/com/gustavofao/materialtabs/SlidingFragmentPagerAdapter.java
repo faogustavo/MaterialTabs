@@ -14,4 +14,8 @@ public abstract class SlidingFragmentPagerAdapter extends FragmentPagerAdapter {
         return null;
     }
 
+    public boolean hasIndicator(int position) {
+        return false;
+    }
+
 }
