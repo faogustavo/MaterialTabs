@@ -6,11 +6,11 @@ A simple way to implement Material Design Tabs.
 Add this dependecy from jCenter:
 
 ``` groovy
-compile 'com.gustavofao:MaterialTabs:1.1'
+compile 'com.gustavofao:MaterialTabs:1.2'
 ```
 
 ## USAGE
-To use this lib, you have to add the tab host and a viewpager on your layout:
+To use this lib, you have to add the tab host and a ViewPager on your layout:
 ``` xml
 <com.gustavofao.materialtabs.SlidingTabLayout
         android:id="@+id/tab_host"
@@ -36,10 +36,10 @@ On your Activity:
     tabLayout.setViewPager(viewPager);
 ```
 
-These are the basic to it work. It will use the active color as white and the innactive color 70% white. To show the indicator, use setSelectedIndicatorColors(Color) with the color you want. In the Example I'm using white.
+These are the basic to it work. It will use the active color as white and the innactive color 70% white. and text content To show the indicator, use *setSelectedIndicatorColors(Color)* with the color you want.
 
 ## ADAPTER
-The TabAdapter extends **SlidingFragmentPagerAdapter** that extends **FragmentPagerAdapter**. To use is the same way you use FragmentPagerAdapter when going to use text must implement *getPageTitle(int position)* and when you are going to use icon needs to override *getPageDrawable(int Position)*. When you are using **only icons**, you can have an information dot for notify something. The sample is
+The TabAdapter extends **SlidingFragmentPagerAdapter** that extends **FragmentPagerAdapter**. To use is the same way you use FragmentPagerAdapter when going to use text must implement *getPageTitle(int position)* and when you are going to use icon needs to override *getPageDrawable(int Position)*. You can also integrate your support actionbar to change title with the tabs. If you have a fixed text on you actionbar, just don't set it or return always your title on *getToolbarTitle(int position)*. Check the sample above.
 ``` java
 public static class TabAdapter extends SlidingFragmentPagerAdapter {
   private String[] titles = {
@@ -65,8 +65,8 @@ public static class TabAdapter extends SlidingFragmentPagerAdapter {
   }
 
   @Override
-  public boolean hasIndicator(int position) {
-      return position == 1;
+  public String getToolbarTitle(int position) {
+      return titles[position];
   }
   ...
 }
@@ -86,19 +86,39 @@ tabLayout.setTabType(TabType.TEXT_ICON); // Text and icon
 tabLayout.setTabType(TabType.ICON_ONLY); // Just the icon
 tabLayout.setTabType(TabType.TEXT_ONLY); // Just the text
 ```
+
+To add actionbar
+``` java
+tabLayout.setActionBar(getSupportActionBar());
+```
+
+To show and hide information point
+``` java
+tabLayout.showIndicator(position);
+tabLayout.hideIndicator(position);
+```
 ## SAMPLE
 The sample can be found on [this link](https://github.com/faogustavo/MaterialTabs/blob/master/sample/src/main/java/com/gustavofao/materialtablayout/sample/MainActivity.java) and its layout on [this](https://github.com/faogustavo/MaterialTabs/blob/master/sample/src/main/res/layout/activity_main.xml).
 
 ## SCREENSHOTS
-![](screenshots/tela_01.png) ![](screenshots/tela_02.png) ![](screenshots/tela_3.png) ![](screenshots/tela_04.png)
+![](screenshots/tela_01.png)
+![](screenshots/tela_02.png)
+![](screenshots/tela_03.png)
+![](screenshots/tela_04.png)
+![](screenshots/tela_05.png)
+![](screenshots/tela_06.png)
 
 ## UPDATES
 
 ### 1.0
-    - Project start with icons, text and both together.
+- Project start with icons, text and both together.
 
 ### 1.1
-    - Added information dot.
+- Added information point.
+
+### 1.2
+- Added ActionBar (Support) integration for change title.
+- Adjusted information point to be editable (show/hide) after create views.
 
 ## Thanks
 [Google IOSched](https://github.com/google/iosched/) by Google.

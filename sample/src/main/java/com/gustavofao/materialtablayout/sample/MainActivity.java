@@ -1,6 +1,7 @@
 package com.gustavofao.materialtablayout.sample;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private SlidingTabLayout tabLayout;
     private ViewPager viewPager;
+    private TabAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +39,39 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        viewPager.setAdapter(new TabAdapter(getSupportFragmentManager(), this)); // Necessario
+        adapter = new TabAdapter(getSupportFragmentManager(), this);
+        viewPager.setAdapter(adapter); // Necessario
 
         tabLayout.setDistributeEvenly(true);
         tabLayout.setTabType(TabType.ICON_ONLY);
-        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
+        tabLayout.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
+        tabLayout.setActionBar(getSupportActionBar());
+//        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
 //        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.colorAccent));
 //        tabLayout.setCustomUnfocusedColor(getResources().getColor(R.color.colorAccent70));
 
         tabLayout.setViewPager(viewPager); // Necessário
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.ShowNotification:
+                tabLayout.showIndicator(1);
+                return true;
+
+            case R.id.HideNotification:
+                tabLayout.hideIndicator(1);
+                return true;
+
+            default: return super.onOptionsItemSelected(item);
+        }
     }
 
     public static class TabFragment extends Fragment {
@@ -121,8 +149,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public boolean hasIndicator(int position) {
-            return position == 1;
+        public String getToolbarTitle(int position) {
+            return titles[position];
         }
     }
 }

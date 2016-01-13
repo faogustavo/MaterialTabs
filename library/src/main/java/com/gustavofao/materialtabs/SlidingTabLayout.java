@@ -22,6 +22,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
@@ -35,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import static com.gustavofao.materialtabs.TabType.ICON_ONLY;
 import static com.gustavofao.materialtabs.TabType.TEXT_ONLY;
 
 public class SlidingTabLayout extends HorizontalScrollView {
@@ -50,14 +52,15 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private static final int ICON_ID = R.id.TabImage;
     private static final int INDICATOR_ID = R.id.TabIndicator;
 
-    private int mTitleOffset;
-
     private boolean mDistributeEvenly;
 
     private int customFocusedColor;
     private int customUnfocusedColor;
 
+    private int mTitleOffset;
+
     private TabType tabType;
+    private ActionBar actionBar;
     private ViewPager mViewPager;
     private ViewPager.OnPageChangeListener mViewPagerPageChangeListener;
 
@@ -103,6 +106,66 @@ public class SlidingTabLayout extends HorizontalScrollView {
         mTabStrip.setSelectedIndicatorColors(colors);
     }
 
+    public void setActionBar(ActionBar actionBar) {
+        this.actionBar = actionBar;
+    }
+
+    public void showIndicator(int position) {
+        if (tabType !=  ICON_ONLY) return;
+
+        View tabView = mTabStrip.getChildAt(position);
+        View tabIndicator = tabView.findViewById(INDICATOR_ID);
+
+        if (tabIndicator != null) {
+            tabIndicator.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void showIndicators(int... position) {
+        if (tabType !=  ICON_ONLY) return;
+
+        for (int pos:position) {
+            View tabView = mTabStrip.getChildAt(pos);
+            View tabIndicator = tabView.findViewById(INDICATOR_ID);
+
+            if (tabIndicator != null) {
+                tabIndicator.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+    public void hideIndicator(int position) {
+        if (tabType !=  ICON_ONLY) return;
+
+        View tabView = mTabStrip.getChildAt(position);
+        View tabIndicator = tabView.findViewById(INDICATOR_ID);
+
+        if (tabIndicator != null) {
+            tabIndicator.setVisibility(View.GONE);
+        }
+    }
+
+    public void hideIndicators(int... position) {
+        if (tabType !=  ICON_ONLY) return;
+
+        for (int pos:position) {
+            View tabView = mTabStrip.getChildAt(pos);
+            View tabIndicator = tabView.findViewById(INDICATOR_ID);
+
+            if (tabIndicator != null) {
+                tabIndicator.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    public boolean isIndicatorVisible(int position) {
+        if (tabType !=  ICON_ONLY) return false;
+
+        View tabView = mTabStrip.getChildAt(position);
+        View tabIndicator = tabView.findViewById(INDICATOR_ID);
+
+        return tabIndicator.getVisibility() == View.VISIBLE;
+    }
 
     public void setOnPageChangeListener(ViewPager.OnPageChangeListener listener) {
         mViewPagerPageChangeListener = listener;
@@ -118,6 +181,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
         if (viewPager != null) {
             viewPager.setOnPageChangeListener(new InternalViewPagerListener());
             populateTabStrip();
+
+            SlidingFragmentPagerAdapter adapter = (SlidingFragmentPagerAdapter) mViewPager.getAdapter();
+            if (actionBar != null)
+                actionBar.setTitle(adapter.getToolbarTitle(mViewPager.getCurrentItem()));
         }
     }
 
@@ -135,7 +202,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
             View tabView = null;
             TextView tabTitleView = null;
             ImageView tabImageView = null;
-            View tabIndicator = null;
 
             switch (tabType) {
                 case TEXT_ONLY:
@@ -146,7 +212,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 case ICON_ONLY:
                     tabView = LayoutInflater.from(getContext()).inflate(ICON_ONLY_TAB, mTabStrip, false);
                     tabImageView = (ImageView) tabView.findViewById(ICON_ID);
-                    tabIndicator = tabView.findViewById(INDICATOR_ID);
                     break;
 
                 case TEXT_ICON:
@@ -175,10 +240,6 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 tabImageView.setImageDrawable(adapter.getPageDrawable(i));
                 tabImageView.setColorFilter(i == mViewPager.getCurrentItem() ?
                         focused_color : unfocused_color, PorterDuff.Mode.MULTIPLY);
-            }
-
-            if (tabIndicator != null && adapter.hasIndicator(i)) {
-                tabIndicator.setVisibility(View.VISIBLE);
             }
 
             tabView.setOnClickListener(tabClickListener);
@@ -252,12 +313,17 @@ public class SlidingTabLayout extends HorizontalScrollView {
             TextView tabTitleView = null;
             ImageView tabImageView = null;
 
+            SlidingFragmentPagerAdapter adapter = (SlidingFragmentPagerAdapter) mViewPager.getAdapter();
             int focused_color = customFocusedColor != 0 ? customFocusedColor : FOCUSED_WHITE;
             int unfocused_color = customUnfocusedColor != 0 ? customUnfocusedColor : NOT_FOCUSED_WHITE;
 
             if (mScrollState == ViewPager.SCROLL_STATE_IDLE) {
                 mTabStrip.onViewPagerPageChanged(position, 0f);
                 scrollToTab(position, 0);
+            }
+
+            if (actionBar != null) {
+                actionBar.setTitle(adapter.getToolbarTitle(mViewPager.getCurrentItem()));
             }
 
             for (int i = 0; i < mTabStrip.getChildCount(); i++) {

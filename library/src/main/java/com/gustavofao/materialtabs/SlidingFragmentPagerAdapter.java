@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public abstract class SlidingFragmentPagerAdapter extends FragmentPagerAdapter {
 
+    private static final String EMPTY_TOOLBAR_TITLE = "";
+
     public SlidingFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -14,8 +16,7 @@ public abstract class SlidingFragmentPagerAdapter extends FragmentPagerAdapter {
         return null;
     }
 
-    public boolean hasIndicator(int position) {
-        return false;
+    public String getToolbarTitle(int position) {
+        return EMPTY_TOOLBAR_TITLE;
     }
-
 }
