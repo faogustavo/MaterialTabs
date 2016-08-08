@@ -42,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
         adapter = new TabAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(adapter); // Necessario
 
+        tabLayout.setTextSize(18);
         tabLayout.setDistributeEvenly(true);
-        tabLayout.setTabType(TabType.ICON_ONLY);
+        tabLayout.setTabType(TabType.TEXT_ONLY);
         tabLayout.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
         tabLayout.setActionBar(getSupportActionBar());
 //        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));

@@ -58,6 +58,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
     private int customUnfocusedColor;
 
     private int mTitleOffset;
+    private int textSize = 14;
 
     private TabType tabType;
     private ActionBar actionBar;
@@ -108,6 +109,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     public void setActionBar(ActionBar actionBar) {
         this.actionBar = actionBar;
+    }
+
+    public void setTextSize(int textSize) {
+        this.textSize = textSize;
     }
 
     public void showIndicator(int position) {
@@ -232,6 +237,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             if (tabTitleView != null && adapter.getPageTitle(i) != null) {
                 tabTitleView.setText(adapter.getPageTitle(i));
+                tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_SP, this.textSize);
                 tabTitleView.setTextColor(i == mViewPager.getCurrentItem() ?
                         focused_color : unfocused_color);
             }

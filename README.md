@@ -6,7 +6,7 @@ A simple way to implement Material Design Tabs.
 Add this dependecy from jCenter:
 
 ``` groovy
-compile 'com.gustavofao:MaterialTabs:1.2'
+compile 'com.gustavofao:MaterialTabs:1.3.1'
 ```
 
 ## USAGE
