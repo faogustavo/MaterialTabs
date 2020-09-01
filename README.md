@@ -6,7 +6,7 @@ A simple way to implement Material Design Tabs.
 Add this dependecy from jCenter:
 
 ``` groovy
-compile 'com.gustavofao:MaterialTabs:1.3.1'
+implementation 'com.gustavofao:MaterialTabs:1.3.2'
 ```
 
 ## USAGE
@@ -19,7 +19,7 @@ To use this lib, you have to add the tab host and a ViewPager on your layout:
         android:layout_below="@+id/toolbar"
         android:background="?attr/colorPrimary"/>
 
-  <android.support.v4.view.ViewPager
+  <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

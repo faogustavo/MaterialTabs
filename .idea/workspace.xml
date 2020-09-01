@@ -18,59 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba1d7e52-7453-4988-80cc-8a5149d03605" name="Default" comment="updated versions from everything, fix height bug from android 8+, added allCaps setter">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/library/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/library/library.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/androidTest/java/com/gustavofao/materialtabs/ApplicationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/gustavofao/materialtabs/SlidingFragmentPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/gustavofao/materialtabs/SlidingFragmentPagerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/gustavofao/materialtabs/SlidingTabLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/gustavofao/materialtabs/SlidingTabLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/java/com/gustavofao/materialtabs/SlidingTabStrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/java/com/gustavofao/materialtabs/SlidingTabStrip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout-v21/icon_only.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/layout-v21/icon_only.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout-v21/text_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/layout-v21/text_icon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout-v21/text_only.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/layout-v21/text_only.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout/icon_only.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/layout/icon_only.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout/text_icon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/layout/text_icon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/main/res/layout/text_only.xml" beforeDir="false" afterPath="$PROJECT_DIR$/library/src/main/res/layout/text_only.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/src/test/java/com/gustavofao/materialtabs/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sample/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/sample.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/sample.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/androidTest/java/com/gustavofao/materialtablayout/sample/ApplicationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/java/com/gustavofao/materialtablayout/sample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/java/com/gustavofao/materialtablayout/sample/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sample/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/src/test/java/com/gustavofao/materialtablayout/sample/ExampleUnitTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +96,7 @@
       <recent name="$PROJECT_DIR$/library/src/main/res/layout-v21" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.sample">
+  <component name="RunManager" selected="Gradle.MaterialTabs [generateRelease]">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -347,6 +298,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MaterialTabs [generateRelease]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="generateRelease" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MaterialTabs [zipRelease]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="zipRelease" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -358,7 +347,15 @@
     </configuration>
     <list>
       <item itemvalue="Android App.sample" />
+      <item itemvalue="Gradle.MaterialTabs [zipRelease]" />
+      <item itemvalue="Gradle.MaterialTabs [generateRelease]" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MaterialTabs [generateRelease]" />
+        <item itemvalue="Gradle.MaterialTabs [zipRelease]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -378,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598957004429</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated versions from everything, fix height bug from android 8+, added allCaps setter">
+      <created>1598957259999</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598957259999</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -390,9 +394,14 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="update gitignore" />
     <MESSAGE value="updated versions from everything, fix height bug from android 8+, added allCaps setter" />
     <option name="LAST_COMMIT_MESSAGE" value="updated versions from everything, fix height bug from android 8+, added allCaps setter" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1496" y="242" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598952415717">
@@ -407,36 +416,44 @@
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
     <state x="-1222" y="334" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598951831054" />
-    <state x="-1339" y="181" key="CommitChangelistDialog2" timestamp="1598957064162">
+    <state x="-1339" y="181" key="CommitChangelistDialog2" timestamp="1598957259838">
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
-    <state x="-1339" y="181" key="CommitChangelistDialog2/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598957064162" />
-    <state width="1878" height="304" key="GridCell.Tab.0.bottom" timestamp="1598957160147">
+    <state x="-1339" y="181" key="CommitChangelistDialog2/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598957259838" />
+    <state width="1878" height="304" key="GridCell.Tab.0.bottom" timestamp="1598958467362">
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
-    <state width="1878" height="304" key="GridCell.Tab.0.bottom/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598957160147" />
-    <state width="1878" height="304" key="GridCell.Tab.0.center" timestamp="1598957160143">
+    <state width="1878" height="304" key="GridCell.Tab.0.bottom/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598958467362" />
+    <state width="1878" height="304" key="GridCell.Tab.0.center" timestamp="1598958467360">
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
-    <state width="1878" height="304" key="GridCell.Tab.0.center/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598957160143" />
-    <state width="1878" height="304" key="GridCell.Tab.0.left" timestamp="1598957160143">
+    <state width="1878" height="304" key="GridCell.Tab.0.center/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598958467360" />
+    <state width="1878" height="304" key="GridCell.Tab.0.left" timestamp="1598958467359">
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
-    <state width="1878" height="304" key="GridCell.Tab.0.left/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598957160143" />
-    <state width="1878" height="304" key="GridCell.Tab.0.right" timestamp="1598957160145">
+    <state width="1878" height="304" key="GridCell.Tab.0.left/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598958467359" />
+    <state width="1878" height="304" key="GridCell.Tab.0.right" timestamp="1598958467361">
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
-    <state width="1878" height="304" key="GridCell.Tab.0.right/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598957160145" />
+    <state width="1878" height="304" key="GridCell.Tab.0.right/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598958467361" />
     <state x="-1459" y="219" key="SettingsEditor" timestamp="1598956029699">
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
     <state x="-1459" y="219" key="SettingsEditor/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598956029699" />
+    <state x="-1360" y="320" key="Vcs.Push.Dialog.v2" timestamp="1598957263406">
+      <screen x="-1920" y="40" width="1920" height="1080" />
+    </state>
+    <state x="-1360" y="320" key="Vcs.Push.Dialog.v2/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598957263406" />
     <state x="-1820" y="140" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1598953086970">
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
     <state x="-1820" y="140" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598953086970" />
     <state x="-1820" y="140" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog/-3840.63.1920.1057/-1920.40.1920.1080/0.23.1792.1030@-1920.40.1920.1080" timestamp="1598952149984" />
     <state x="-1817" y="194" width="1720" height="880" key="com.android.tools.idea.avdmanager.AvdListDialog/-3840.63.1920.1057/-1920.40.1920.1080/0.23.1792.1097@-1920.40.1920.1080" timestamp="1598953008955" />
+    <state x="-1302" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598957926982">
+      <screen x="-1920" y="40" width="1920" height="1080" />
+    </state>
+    <state x="-1302" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-3840.40.1920.1080/-1920.40.1920.1080/0.0.1792.1120@-1920.40.1920.1080" timestamp="1598957926982" />
     <state x="-1305" y="336" width="690" height="488" key="find.popup" timestamp="1598951099641">
       <screen x="-1920" y="40" width="1920" height="1080" />
     </state>
