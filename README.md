@@ -97,6 +97,12 @@ To show and hide information point
 tabLayout.showIndicator(position);
 tabLayout.hideIndicator(position);
 ```
+
+To remove allCaps modifier from text:
+```java
+tabLayout.setAllCaps(false);
+```
+
 ## SAMPLE
 The sample can be found on [this link](https://github.com/faogustavo/MaterialTabs/blob/master/sample/src/main/java/com/gustavofao/materialtablayout/sample/MainActivity.java) and its layout on [this](https://github.com/faogustavo/MaterialTabs/blob/master/sample/src/main/res/layout/activity_main.xml).
 

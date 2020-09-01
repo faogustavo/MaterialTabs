@@ -1,8 +1,11 @@
 package com.gustavofao.materialtabs;
 
 import android.graphics.drawable.Drawable;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 public abstract class SlidingFragmentPagerAdapter extends FragmentPagerAdapter {
 
@@ -12,10 +15,12 @@ public abstract class SlidingFragmentPagerAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
+    @Nullable
     public Drawable getPageDrawable(int position) {
         return null;
     }
 
+    @NonNull
     public String getToolbarTitle(int position) {
         return EMPTY_TOOLBAR_TITLE;
     }

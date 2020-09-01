@@ -1,15 +1,8 @@
 package com.gustavofao.materialtablayout.sample;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,41 +10,47 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
+
 import com.gustavofao.materialtabs.SlidingFragmentPagerAdapter;
 import com.gustavofao.materialtabs.SlidingTabLayout;
-import com.gustavofao.materialtabs.TabType;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private SlidingTabLayout tabLayout;
-    private ViewPager viewPager;
-    private TabAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (SlidingTabLayout) findViewById(R.id.tab_host);
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
 
         setSupportActionBar(toolbar);
 
-        adapter = new TabAdapter(getSupportFragmentManager(), this);
-        viewPager.setAdapter(adapter); // Necessario
+        TabAdapter adapter = new TabAdapter(getSupportFragmentManager(), this);
+        viewPager.setAdapter(adapter);
 
         tabLayout.setTextSize(18);
+        tabLayout.setAllCaps(false);
         tabLayout.setDistributeEvenly(true);
-        tabLayout.setTabType(TabType.TEXT_ONLY);
+//        tabLayout.setTabType(TabType.TEXT_ONLY);
         tabLayout.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
         tabLayout.setActionBar(getSupportActionBar());
 //        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
 //        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.colorAccent));
 //        tabLayout.setCustomUnfocusedColor(getResources().getColor(R.color.colorAccent70));
 
-        tabLayout.setViewPager(viewPager); // Necessário
+        tabLayout.setViewPager(viewPager);
     }
 
     @Override
@@ -71,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 tabLayout.hideIndicator(1);
                 return true;
 
-            default: return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         public static final String POSITION = "position";
 
         private View view;
-        private TextView positionText;
 
         @Nullable
         @Override
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onResume() {
             super.onResume();
-            positionText = (TextView) this.findViewById(R.id.FragmentTabText);
+            TextView positionText = (TextView) this.findViewById(R.id.FragmentTabText);
 
             int position = getArguments().getInt(POSITION);
             positionText.setText("Position " + position);
@@ -103,18 +102,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class TabAdapter extends SlidingFragmentPagerAdapter {
+    public static class TabAdapter extends SlidingFragmentPagerAdapter {
 
         private String[] titles = {
-                "Contacts",
-                "Favorites",
-                "Groups",
+            "Contacts",
+            "Favorites",
+            "Groups",
         };
 
         private int[] icons = {
-                R.drawable.account,
-                R.drawable.star,
-                R.drawable.account_multiple
+            R.drawable.account,
+            R.drawable.star,
+            R.drawable.account_multiple
         };
         private Context context;
 
@@ -123,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             this.context = context;
         }
 
+        @NonNull
         @Override
         public Fragment getItem(int position) {
             Bundle bundle = new Bundle();
@@ -146,9 +146,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Drawable getPageDrawable(int position) {
-            return context.getResources().getDrawable(icons[position]);
+            return ResourcesCompat.getDrawable(context.getResources(), icons[position], null);
         }
 
+        @NonNull
         @Override
         public String getToolbarTitle(int position) {
             return titles[position];
